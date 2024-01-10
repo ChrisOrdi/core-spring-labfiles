@@ -110,13 +110,15 @@
             </resource>
         </resources>
         <plugins>
+
+
             <plugin>
-                <!-- Set Java version -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- Specify the version here -->
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <source>1.8</source> <!-- Java source compatibility -->
+                    <target>1.8</target> <!-- Java target compatibility -->
                 </configuration>
             </plugin>
             <plugin>
@@ -148,8 +150,13 @@
                     </additionalBuildcommands>
                 </configuration>
             </plugin>
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.22.2</version> <!-- Use the appropriate version -->
+                    <!-- Additional configuration here if needed -->
+
                 <configuration>
                     <includes>
                         <include>**/*Tests.java</include>
@@ -160,7 +167,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version> <!-- Use the latest or a suitable version -->
+                <configuration>
+                    <!-- Your custom configuration here -->
+                </configuration>
             </plugin>
+
         </plugins>
     </build>
     
